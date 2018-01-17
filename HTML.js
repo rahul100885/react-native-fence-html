@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react'
 import { View } from 'react-native'
 import shallowCompare from 'react-addons-shallow-compare'
@@ -13,10 +14,10 @@ class HTML extends React.Component {
   /* ****************************************************************************/
 
   static propTypes = {
-    html: React.PropTypes.string.isRequired,
-    htmlStyles: React.PropTypes.object,
-    onLinkPress: React.PropTypes.func,
-    renderers: React.PropTypes.object.isRequired
+    html: PropTypes.string.isRequired,
+    htmlStyles: PropTypes.object,
+    onLinkPress: PropTypes.func,
+    renderers: PropTypes.object.isRequired
   }
 
   static defaultProps = {

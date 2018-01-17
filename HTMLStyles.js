@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import PropTypes from 'prop-types';
 import React from 'react'
 
 // We have to do some munging here as the objects are wrapped
@@ -170,7 +171,7 @@ class HTMLStyles {
         testStyle[key] = value
         if (styleProps[key](testStyle, key, '', 'prop')) {
           // See if we can convert a 20px to a 20 automagically
-          if (styleProps[key] === React.PropTypes.number) {
+          if (styleProps[key] === PropTypes.number) {
             const numericValue = parseFloat(value.replace('px', ''))
             if (!isNaN(numericValue)) {
               testStyle[key] = numericValue
@@ -187,7 +188,7 @@ class HTMLStyles {
       .reduce((acc, [key, value]) => {
         acc[key] = value
         return acc
-      }, {})
+      }, {});
   }
 
   /**
